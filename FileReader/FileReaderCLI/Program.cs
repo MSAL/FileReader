@@ -53,6 +53,13 @@ namespace FileReaderCLI
                 xmlFileReader.ReadContent(xmlFile);
                 Console.WriteLine(xmlFile.Content);
 
+
+                FileContainer jsonFile = new FileContainer();
+                //file path for test
+                jsonFile.Path = @"c:\temp\test.json";
+                JsonFileReader jsonFileReader = new JsonFileReader();
+                jsonFileReader.ReadContent(jsonFile);
+                Console.WriteLine(jsonFile.Content);
             }
             Console.ReadLine();
         }
