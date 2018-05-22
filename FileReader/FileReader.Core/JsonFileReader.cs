@@ -23,11 +23,11 @@ namespace FileReader.Core
             {
                 if (reader.Value != null)
                 {
-                   file.Content = file.Content + "Token: " +reader.TokenType+", Value: "+ reader.Value +"\n";
+                   file.Content = file.Content + "Token: " +EncryptionUtility.DecryptData( reader.TokenType.ToString())+", Value: "+ EncryptionUtility.DecryptData(reader.Value.ToString()) +"\n";
                 }
                 else
                 {
-                    file.Content = file.Content + "Token: " + reader.TokenType + "\n"; 
+                    file.Content = file.Content + "Token: " + EncryptionUtility.DecryptData(reader.TokenType.ToString()) + "\n"; 
                 }
             }
         }

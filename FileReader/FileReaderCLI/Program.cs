@@ -19,10 +19,13 @@ namespace FileReaderCLI
             Console.WriteLine("Please enter your role");
             string role = Console.ReadLine();
 
+            string response = ""; 
+
+
             if (role.ToUpper().Equals("ADMIN"))
             {
                 Console.WriteLine("The given file is it encrypted");
-                string response = Console.ReadLine();
+                response = Console.ReadLine();
                 if (response.ToUpper().Equals("YES"))
                 {
                     textFile.IsEncrypted = true;
@@ -48,7 +51,7 @@ namespace FileReaderCLI
                 xmlFile.Path = @"c:\temp\temp.xml";
 
                 Console.WriteLine("The given file is it encrypted ? ");
-                string response = Console.ReadLine();
+                response = Console.ReadLine();
                 if (response.ToUpper().Equals("YES"))
                 {
                     xmlFile.IsEncrypted = true;
@@ -59,13 +62,24 @@ namespace FileReaderCLI
                 Console.WriteLine(xmlFile.Content);
 
 
-                FileContainer jsonFile = new FileContainer();
-                //file path for test
-                jsonFile.Path = @"c:\temp\test.json";
-                JsonFileReader jsonFileReader = new JsonFileReader();
-                jsonFileReader.ReadContent(jsonFile);
-                Console.WriteLine(jsonFile.Content);
+                
             }
+
+            FileContainer jsonFile = new FileContainer();
+            //file path for test
+            jsonFile.Path = @"c:\temp\test.json";
+
+            Console.WriteLine("The given file is it encrypted ? ");
+            response = Console.ReadLine();
+            if (response.ToUpper().Equals("YES"))
+            {
+                jsonFile.IsEncrypted = true;
+            }
+
+            JsonFileReader jsonFileReader = new JsonFileReader();
+            jsonFileReader.ReadContent(jsonFile);
+            Console.WriteLine(jsonFile.Content);
+
             Console.ReadLine();
         }
 
