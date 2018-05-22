@@ -20,6 +20,8 @@ namespace FileReaderCLI
             textFileReader.ReadContent(textFile);
             //Show file content if exist 
             Console.WriteLine(textFile.Content);
+
+
             //XML File Sample reading
             FileContainer xmlFile = new FileContainer();
             //file path for test
@@ -30,5 +32,8 @@ namespace FileReaderCLI
 
             Console.ReadLine();
         }
+
+       
+
     }
 }
