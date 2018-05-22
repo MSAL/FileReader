@@ -16,22 +16,27 @@ namespace FileReaderCLI
             //file path for test
             textFile.Path = @"c:\temp\MyTest.txt";
 
-
-            Console.WriteLine("The given file is it encrypted");
-            string response = Console.ReadLine();
-            if (response.ToUpper().Equals("YES"))
-            {
-                textFile.IsEncrypted = true;
-            }
-
-            //Text File Sample reading 
-            TextFileReader textFileReader = new TextFileReader();
-            textFileReader.ReadContent(textFile);
-            //Show file content if exist 
-            Console.WriteLine(textFile.Content);
-
             Console.WriteLine("Please enter your role");
             string role = Console.ReadLine();
+
+            if (role.ToUpper().Equals("ADMIN"))
+            {
+                Console.WriteLine("The given file is it encrypted");
+                string response = Console.ReadLine();
+                if (response.ToUpper().Equals("YES"))
+                {
+                    textFile.IsEncrypted = true;
+                }
+
+                //Text File Sample reading 
+                TextFileReader textFileReader = new TextFileReader();
+                textFileReader.ReadContent(textFile);
+                //Show file content if exist 
+                Console.WriteLine(textFile.Content);
+            }
+
+            Console.WriteLine("Please enter your role");
+            role = Console.ReadLine();
 
             if (role.ToUpper().Equals("ADMIN"))
             {
@@ -42,8 +47,8 @@ namespace FileReaderCLI
                 //file path for test
                 xmlFile.Path = @"c:\temp\temp.xml";
 
-                Console.WriteLine("The given file is it encrypted");
-                response = Console.ReadLine();
+                Console.WriteLine("The given file is it encrypted ? ");
+                string response = Console.ReadLine();
                 if (response.ToUpper().Equals("YES"))
                 {
                     xmlFile.IsEncrypted = true;
