@@ -9,7 +9,7 @@ namespace FileReader.Core
 {
     public class TextFileReader : ITextFileReader
     {
-        public void ReadText(FileContainer file)
+        public void ReadContent(FileContainer file)
         {
             string path = file.Path;
             string readText = ""; 
