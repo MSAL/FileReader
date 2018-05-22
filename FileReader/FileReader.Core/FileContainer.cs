@@ -13,6 +13,6 @@ namespace FileReader.Core
         public string Name { get; set; }
         public string Type { get; set; }
         public bool IsEncrypted { get; set; }
-        public string Role { get; set; }
+        public List<string> Roles { get; set; }
     }
 }
