@@ -65,22 +65,29 @@ namespace FileReaderCLI
                 
             }
 
-            FileContainer jsonFile = new FileContainer();
-            //file path for test
-            jsonFile.Path = @"c:\temp\test.json";
+            Console.WriteLine("Please enter your role");
+            role = Console.ReadLine();
 
-            Console.WriteLine("The given file is it encrypted ? ");
-            response = Console.ReadLine();
-            if (response.ToUpper().Equals("YES"))
+            if (role.ToUpper().Equals("ADMIN"))
             {
-                jsonFile.IsEncrypted = true;
+
+                FileContainer jsonFile = new FileContainer();
+                //file path for test
+                jsonFile.Path = @"c:\temp\test.json";
+
+                Console.WriteLine("The given file is it encrypted ? ");
+                response = Console.ReadLine();
+                if (response.ToUpper().Equals("YES"))
+                {
+                    jsonFile.IsEncrypted = true;
+                }
+
+                JsonFileReader jsonFileReader = new JsonFileReader();
+                jsonFileReader.ReadContent(jsonFile);
+                Console.WriteLine(jsonFile.Content);
+
+                Console.ReadLine();
             }
-
-            JsonFileReader jsonFileReader = new JsonFileReader();
-            jsonFileReader.ReadContent(jsonFile);
-            Console.WriteLine(jsonFile.Content);
-
-            Console.ReadLine();
         }
 
        
