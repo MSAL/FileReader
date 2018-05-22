@@ -36,10 +36,19 @@ namespace FileReaderCLI
             if (role.ToUpper().Equals("ADMIN"))
             {
                 
+
                 //XML File Sample reading
                 FileContainer xmlFile = new FileContainer();
                 //file path for test
                 xmlFile.Path = @"c:\temp\temp.xml";
+
+                Console.WriteLine("The given file is it encrypted");
+                response = Console.ReadLine();
+                if (response.ToUpper().Equals("YES"))
+                {
+                    xmlFile.IsEncrypted = true;
+                }
+
                 XmlFileReader xmlFileReader = new XmlFileReader();
                 xmlFileReader.ReadContent(xmlFile);
                 Console.WriteLine(xmlFile.Content);

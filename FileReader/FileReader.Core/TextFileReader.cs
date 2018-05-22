@@ -26,19 +26,13 @@ namespace FileReader.Core
                    
             if (file.IsEncrypted)
             {
-                readText = DecryptData(readText); 
+                
+                readText = EncryptionUtility.DecryptData(readText); 
             }
             file.Content = readText;
         }
 
 
-        public string DecryptData(string encrypted)
-        {
-            char[] charArray = encrypted.ToCharArray();
-            Array.Reverse(charArray);
-
-            return new string(charArray);
-        }
 
         
     }
