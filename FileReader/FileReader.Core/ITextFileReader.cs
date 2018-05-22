@@ -8,6 +8,6 @@ namespace FileReader.Core
 {
     public interface ITextFileReader
     {
-        void ReadText(FileContainer file);
+        void ReadContent(FileContainer file);
     }
 }

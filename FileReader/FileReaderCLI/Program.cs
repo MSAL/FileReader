@@ -12,15 +12,21 @@ namespace FileReaderCLI
     {
         static void Main(string[] args)
         {
-            FileContainer file = new FileContainer();
+            FileContainer textFile = new FileContainer();
             //file path for test
-            file.Path = @"c:\temp\MyTest.txt";
-
-            TextFileReader fileReader = new TextFileReader();
-            fileReader.ReadText(file);
+            textFile.Path = @"c:\temp\MyTest.txt";
+            //Text File Sample reading 
+            TextFileReader textFileReader = new TextFileReader();
+            textFileReader.ReadContent(textFile);
             //Show file content if exist 
-            Console.WriteLine(file.Content);
-
+            Console.WriteLine(textFile.Content);
+            //XML File Sample reading
+            FileContainer xmlFile = new FileContainer();
+            //file path for test
+            xmlFile.Path = @"c:\temp\temp.xml";
+            XmlFileReader xmlFileReader = new XmlFileReader();
+            xmlFileReader.ReadContent(xmlFile);
+            Console.WriteLine(xmlFile.Content);
 
             Console.ReadLine();
         }
