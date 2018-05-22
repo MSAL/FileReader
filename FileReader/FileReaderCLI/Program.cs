@@ -30,15 +30,21 @@ namespace FileReaderCLI
             //Show file content if exist 
             Console.WriteLine(textFile.Content);
 
+            Console.WriteLine("Please enter your role");
+            string role = Console.ReadLine();
 
-            //XML File Sample reading
-            FileContainer xmlFile = new FileContainer();
-            //file path for test
-            xmlFile.Path = @"c:\temp\temp.xml";
-            XmlFileReader xmlFileReader = new XmlFileReader();
-            xmlFileReader.ReadContent(xmlFile);
-            Console.WriteLine(xmlFile.Content);
+            if (role.ToUpper().Equals("ADMIN"))
+            {
+                
+                //XML File Sample reading
+                FileContainer xmlFile = new FileContainer();
+                //file path for test
+                xmlFile.Path = @"c:\temp\temp.xml";
+                XmlFileReader xmlFileReader = new XmlFileReader();
+                xmlFileReader.ReadContent(xmlFile);
+                Console.WriteLine(xmlFile.Content);
 
+            }
             Console.ReadLine();
         }
 
