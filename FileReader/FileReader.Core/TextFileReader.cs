@@ -24,7 +24,22 @@ namespace FileReader.Core
                 readText = "FileNotFound"; 
             }
                    
+            if (file.IsEncrypted)
+            {
+                readText = DecryptData(readText); 
+            }
             file.Content = readText;
         }
+
+
+        public string DecryptData(string encrypted)
+        {
+            char[] charArray = encrypted.ToCharArray();
+            Array.Reverse(charArray);
+
+            return new string(charArray);
+        }
+
+        
     }
 }

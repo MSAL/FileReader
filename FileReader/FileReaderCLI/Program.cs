@@ -15,11 +15,22 @@ namespace FileReaderCLI
             FileContainer textFile = new FileContainer();
             //file path for test
             textFile.Path = @"c:\temp\MyTest.txt";
+
+
+            Console.WriteLine("The given file is it encrypted");
+            string response = Console.ReadLine();
+            if (response.ToUpper().Equals("YES"))
+            {
+                textFile.IsEncrypted = true;
+            }
+
             //Text File Sample reading 
             TextFileReader textFileReader = new TextFileReader();
             textFileReader.ReadContent(textFile);
             //Show file content if exist 
             Console.WriteLine(textFile.Content);
+
+
             //XML File Sample reading
             FileContainer xmlFile = new FileContainer();
             //file path for test
@@ -30,5 +41,8 @@ namespace FileReaderCLI
 
             Console.ReadLine();
         }
+
+       
+
     }
 }
