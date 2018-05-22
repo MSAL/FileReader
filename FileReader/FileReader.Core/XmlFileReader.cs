@@ -19,6 +19,11 @@ namespace FileReader.Core
                  fileContent = fileContent + node.InnerText + "\n"; 
             }
 
+            if (file.IsEncrypted)
+            {
+                fileContent = EncryptionUtility.DecryptData(fileContent);
+            }
+
             file.Content = fileContent; 
         }
     }
